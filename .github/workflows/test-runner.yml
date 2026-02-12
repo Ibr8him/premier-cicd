@@ -1,17 +1,15 @@
-name: Test Runner Self-Hosted
+name: Test Runner
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  test-runner:
-    runs-on: [self-hosted, linux]
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Test du runner
+      - uses: actions/checkout@v4
+      - name: Vérification HTML
         run: |
-          echo "Runner OK"
-          hostname
-          whoami
-          uname -a
-
+          grep "<h1>" index.html
+grep "<p>" index.html
