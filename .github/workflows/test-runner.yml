@@ -1,0 +1,17 @@
+name: Test Runner Self-Hosted
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test-runner:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Test du runner
+        run: |
+          echo "Runner OK"
+          hostname
+          whoami
+          uname -a
+
